@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function jumpActivate() {
         platforms.forEach(plat => {
-            if (doddlerLeftSpace + 60 >= plat.left &&
-                doddlerLeftSpace <= plat.left + 60 &&
+            if (doddlerLeftSpace + 50 >= plat.left &&
+                doddlerLeftSpace <= plat.left + 50 &&
                 doddlerBottomSpace >= plat.bottom &&
                 doddlerBottomSpace <= plat.bottom + 15 &&
                 !isJumping
