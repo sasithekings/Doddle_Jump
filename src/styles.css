@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #655e5e;
+}
+
+
+.grid {
+    background-color: rgb(1, 1, 1);
+    position: relative;
+    width: 400px;
+    height: 600px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+.doddleJump {
+    background-color: rgb(252, 137, 137);
+    width: 60px;
+    height: 40px;
+    position: absolute;
+}
+
+
+.platforms {
+    background-color: rgb(19, 161, 19);
+    position: absolute;
+    width: 60px;
+    height: 15px;
+}
