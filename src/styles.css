@@ -10,17 +10,20 @@ body {
 
 .grid {
     background-color: rgb(1, 1, 1);
+    background-image: url('images/background.png');
+    background-size: 400px 600px;
     position: relative;
     width: 400px;
     height: 600px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 40px;
     text-align: center;
 }
 
 
 .doddleJump {
-    background-color: rgb(252, 137, 137);
+    background-image: url('images/doodler-guy.png');
+    background-size: 60px 40px;
     width: 60px;
     height: 40px;
     position: absolute;
@@ -28,7 +31,8 @@ body {
 
 
 .platforms {
-    background-color: rgb(19, 161, 19);
+    background-image: url('images/platform.png');
+    background-size: 60px 15px;
     position: absolute;
     width: 60px;
     height: 15px;
