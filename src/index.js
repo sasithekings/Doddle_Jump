@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function moveLeft() {
         clearInterval(setLeftTimerId);
         clearInterval(setRightTimerId);
+        doddler.classList.add('doddleJumpLeft');
         setLeftTimerId = setInterval(function () {
             if (doddlerLeftSpace > 5) {
                 doddlerLeftSpace -= 2;
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function moveRight() {
+        doddler.classList.remove('doddleJumpLeft');
         clearInterval(setRightTimerId);
         clearInterval(setLeftTimerId);
         setRightTimerId = setInterval(function () {

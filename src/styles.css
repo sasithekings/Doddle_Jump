@@ -29,6 +29,12 @@ body {
     position: absolute;
 }
 
+.doddleJumpLeft {
+    
+    transform: scaleX(-1);
+
+}
+
 
 .platforms {
     background-image: url('images/platform.png');
