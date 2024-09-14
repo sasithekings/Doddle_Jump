@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const start = document.querySelector('.startButton')
+    const playAgain = document.querySelector('.playAgain')
     const grid = document.querySelector('.grid');
     const doddler = document.createElement('div');
     const platforms = [];
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let setLeftTimerId = 0;
     let setRightTimerId = 0;
     let score = 0;
+
 
     function createDoddler() {
         doddler.classList.add('doddleJump');
@@ -149,24 +152,35 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(setUpTimerId);
         clearInterval(setLeftTimerId);
         clearInterval(setRightTimerId);
-        platforms.length = 0;  
-        while (grid.firstChild) {
-            grid.firstChild.remove();
-        }
+        platforms.forEach(plat => plat.visual.remove());
+        platforms.length = 0;
+        playAgain.style.display = 'block';
         grid.innerHTML = 'Your Score is ' + score;
+        
     }
 
-    function start() {
-        if (!isGameOver) {
-            createPlatforms();
-            createDoddler();
-            fall(); 
-            setInterval(movingPlatforms, 20);
-            setInterval(jumpActivate, 20);
-            document.addEventListener('keydown', control);
-        } else gameOver();
+    function startGame() {
+        start.style.display = 'none';
+        playAgain.style.display = 'none';
+        if (isGameOver) {
+            doddlerBottomSpace = jumpPoint;
+            doddlerLeftSpace = 0;
+            isJumping = false;
+            isGameOver = false;
+            score = 0;
+            grid.innerHTML = '';
+            playAgain.style.display = 'none';
+        }
+        createPlatforms();
+        createDoddler();
+        fall();
+        setInterval(movingPlatforms, 20);
+        setInterval(jumpActivate, 20);
+        document.addEventListener('keydown', control);
     }
 
-    start();
+
+    start.addEventListener('click',startGame)
+    playAgain.addEventListener('click',startGame)
 
 });
